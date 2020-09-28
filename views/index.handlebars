@@ -1,0 +1,67 @@
+<div class="container main">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4 text-center">Burger</h1>
+            <p class="lead text-center">Burger? Burger</p>
+        </div>
+    </div>
+
+{{!-- Add Burger --}}
+    <div class="container add-burger">
+        <h2 class="text-center">Burger - </h2>
+        <form class="create-form">
+            <div class="form-group">
+                <label for="burger">Burger Name:</label>
+                <textarea id="burger" class="form-control" name="burger_name" rows="2" cols="15"></textarea>
+            </div>
+            <div class="form-row text-center">
+                <div class="col-12">
+
+                    <button class="btn btn-light add" type="submit">Add Burger</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {{!-- Burger list --}}
+    <div id="burger-list">
+        <div class="container burgers">
+            <div class="row pb-4">
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-12 burger-col m-1">
+
+                        <h2 class="text-center burger-heading">Burgers</h2>
+
+                        <ul class="burgers">
+                            {{#each burgers}}
+                            {{#unless devoured}}
+                            {{> partials/burger-block }}
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="col-12 burger-col m-1">
+
+                        <h2 class="text-center burger-heading">Devoured Burgers</h2>
+
+                        <ul class="burgers">
+                            {{#each burgers}}
+                            {{#if devoured}}
+                            {{> partials/burger-block }}
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>

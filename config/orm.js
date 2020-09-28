@@ -56,11 +56,7 @@ class ORM {
 	}
 
     selectAll(table) {
-        const queryString = `SELECT * FROM ??;`;
-        connection.query(queryString, [table], function (err, result) {
-            if (err) throw err;
-            return result;
-        });
+		return this.query('SELECT * FROM ' + table + ';');
     }
     insertOne(table, cols, vals) {
         let queryString = 'INSERT INTO ' + table;

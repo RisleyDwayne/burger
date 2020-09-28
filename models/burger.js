@@ -2,6 +2,7 @@ const orm = require('../config/orm');
 
 // burger model 
 const burger = {
+
 	selectAll: function () {
 		return orm.selectAll('burgers');
 	},
