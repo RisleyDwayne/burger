@@ -13,7 +13,6 @@ $(function () {
             type: 'PUT',
             data: newDevouredState
         }).then(function () {
-
             location.reload();
         });
     });
